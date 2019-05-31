@@ -1,10 +1,10 @@
 // result1.rs
 // Make this test pass! Scroll down for hints :)
 
-#[derive(PartialEq,Debug)]
+#[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
 
-#[derive(PartialEq,Debug)]
+#[derive(PartialEq, Debug)]
 enum CreationError {
     Negative,
     Zero,
@@ -24,7 +24,10 @@ impl PositiveNonzeroInteger {
 #[test]
 fn test_creation() {
     assert!(PositiveNonzeroInteger::new(10).is_ok());
-    assert_eq!(Err(CreationError::Negative), PositiveNonzeroInteger::new(-10));
+    assert_eq!(
+        Err(CreationError::Negative),
+        PositiveNonzeroInteger::new(-10)
+    );
     assert_eq!(Err(CreationError::Zero), PositiveNonzeroInteger::new(0));
 }
 
