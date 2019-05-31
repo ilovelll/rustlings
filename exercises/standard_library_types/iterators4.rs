@@ -10,6 +10,14 @@ pub fn factorial(num: u64) -> u64 {
     // For the most fun don't use:
     // - recursion
     // Scroll down for hints.
+
+
+    // let mut sum = 1;
+    // for i in 1..=num {
+    //     sum *= i;
+    // }
+    // sum
+    (1..=num).into_iter().fold(1, |s,v| s * v)
 }
 
 #[cfg(test)]
